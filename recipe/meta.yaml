@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-instrumentation-elasticsearch" %}
-{% set version = "0.26b1" %}
+{% set version = "0.27b0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry-instrumentation-elasticsearch-{{ version }}.tar.gz
-  sha256: 6d2010b43c3cccc90defc17025085aac8beb637c53f5a96a36d47de85523101f
+  sha256: cb53f8d09596bb3c6a03f6018c53a77c26b1e92a3ba20e8efcaa4ac6b2989faf
 
 build:
   number: 0
@@ -21,8 +21,8 @@ requirements:
     - python >=3.6
   run:
     - opentelemetry-api ~=1.3
-    - opentelemetry-instrumentation ==0.26b1
-    - opentelemetry-semantic-conventions ==0.26b1
+    - opentelemetry-instrumentation ==0.27b0
+    - opentelemetry-semantic-conventions ==0.27b0
     - python >=3.6
     - wrapt <2.0.0,>=1.0.0
     # - opentelemetry-test ==0.24b0
@@ -35,6 +35,9 @@ requirements:
     # - elasticsearch-dsl >=2.0
     # - elasticsearch >=2.0
     # - opentelemetry-test-utils ==0.26b1
+    # - elasticsearch-dsl >=2.0
+    # - elasticsearch >=2.0
+    # - opentelemetry-test-utils ==0.27b0
     # - elasticsearch-dsl >=2.0
     # - elasticsearch >=2.0
 
