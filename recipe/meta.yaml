@@ -1,69 +1,30 @@
 {% set name = "opentelemetry-instrumentation-elasticsearch" %}
-{% set version = "0.33b0" %}
-
+{% set version = "0.36b0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry-instrumentation-elasticsearch-{{ version }}.tar.gz
-  sha256: ec2975c6139c06455897e40db6d689937de6a10ab3baabff303bb03090e5bc8b
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_elasticsearch-{{ version }}.tar.gz
+  sha256: 4671fd547dba60551c83cbc06c1d4bd38b50c6088678be78c8d0d37831f9f9bc
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - python >=3.6
+    - hatchling
   run:
-    - opentelemetry-api ~=1.12
-    - opentelemetry-instrumentation ==0.33b0
-    - opentelemetry-semantic-conventions ==0.33b0
-    - python >=3.6
+    - python >=3.7
+    - opentelemetry-api >=1.12,<2.dev0
+    - opentelemetry-instrumentation ==0.36b0
+    - opentelemetry-semantic-conventions ==0.36b0
     - wrapt <2.0.0,>=1.0.0
-    # - opentelemetry-test ==0.24b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test ==0.25b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test ==0.25b2
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.26b1
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.27b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.28b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.28b1
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.29b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.30b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.30b1
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.31b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.32b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
-    # - opentelemetry-test-utils ==0.33b0
-    # - elasticsearch-dsl >=2.0
-    # - elasticsearch >=2.0
 
 test:
   imports:
